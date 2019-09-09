@@ -1,0 +1,12 @@
+{
+  "name": "a2-jhyuen",
+  "version": "0.1.0",
+  "description": "",
+  "author": "Joseph Yuen",
+  "scripts": {
+    "start": "node server.improved.js"
+  },
+  "dependencies": {
+    "mime": "^2.4.4"
+  }
+}
