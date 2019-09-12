@@ -20,5 +20,5 @@ function invalidLogin() {
   alert("Invalid Username/Password. Please try again.");
 }
 
-console.log("a3-jhyuen-login")
+console.log("a3-jhyuen-admin")
 console.log("Welcome to Fantastic Fries!")
