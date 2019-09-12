@@ -55,10 +55,6 @@ tr:nth-child(even) {
   background-color: #dddddd;
 }
 
-button {
-
-}
-
 .center {
     display: flex;
     align-items: center;

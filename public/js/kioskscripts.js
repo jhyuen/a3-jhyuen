@@ -12,8 +12,6 @@ var orderNum = 0;
 // add order to server queue table
 const submit = function( e ) {
 
-
-
     // prevent default form action from being carried out
     e.preventDefault()
     const yourname = document.querySelector( '#name' ),
@@ -117,7 +115,7 @@ refreshTable();
 
 // submit button
 window.onload = function() {
-    const button = document.querySelector( 'button' )
+    const button = document.querySelector( '#submitBtn' )
     button.onclick = submit
 }
 
