@@ -19,7 +19,7 @@
     </div>
     <h3>In-Store Kiosk</h3>
 
-    <button onclick="window.location.href = 'http://localhost:3000/login.html';">Login</button>
+    <button id="loginFixed" type="button" class="btn btn-primary" onclick="window.location.href = 'http://localhost:3000/login.html';">Login</button>
 
     <div class="instructions">
       <p>Welcome to Fantastic Fries! Create your fantastic fries order on the left, and then see your order, and everybody else's, on the right. Once your order is done, we'll call you up to the register to pay and pick up your order.</p>
@@ -33,12 +33,12 @@
 
         <h4>Name</h4>
         <form action="">
-          <input type='text' id='name' value="John Doe">
+          <input type='text' id='name' value="John Doe" style="text-align:right;">
         </form>
 
         <h4>Phone Number</h4>
         <form action="">
-          <input type='tel' id='phone' pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" value="123-456-7890">
+          <input type='tel' id='phone' pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" style="text-align:right;" value="123-456-7890">
         </form>
 
         <h2>Fries</h2>
@@ -55,7 +55,7 @@
 
         <h4>Seasoning</h4>
         <form action="">
-          <select name="seasoning" id='seasoning' dir="srtl">
+          <select name="seasoning" id='seasoning' dir="rtl">
             <option value="none">None +$0</option>
             <option value="salt">Just Salt +$1</option>
             <option value="pepper">Just Pepper +$1</option>
@@ -77,7 +77,7 @@
 
         <div class="submit">
           <div class="right">
-            <button type="button" id="submitBtn">Place Your Fantastic Order</button>
+            <button id="submitBtn" type="button" class="btn btn-primary">Place Your Fantastic Order</button>
           </div>
         </div>
 
@@ -87,15 +87,17 @@
 
       <div class="queue">
         <h2>Queue</h2>
-        <table id='tableData'>
-          <tr>
-            <th>Name</th>
-            <th>Fries</th>
-            <th>Cost</th>
-            <th>Order #</th>
-          </tr>
+        <table class= "table fixed_header" id='tableData'>
+          <thead>
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col">Fries</th>
+              <th scope="col">Cost</th>
+              <th scope="col">Order #</th>
+            </tr>
+          </thead>
         </table>
-
+        <button id="refresh" type="button" class="btn btn-primary" onclick="refresh()">Refresh</button>
       </div>
 
     </div> 

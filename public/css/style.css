@@ -1,12 +1,11 @@
 body {
     background-image: url("bg.jpg");
     font-family: Arial, Helvetica, sans-serif;
-    background-position: center;
     background-size: 100%;
-    background-repeat: repeat-y;
+    background-position: fixed;
     margin-left: 200px;
     margin-right: 200px;
-    margin-bottom: 80px;
+    margin-bottom: 100px;
 }
 
 h1 {
@@ -34,10 +33,6 @@ h3 {
 
 p {
   font-weight: normal ;
-}
-
-input {
-  text-align: right;
 }
 
 table {
@@ -110,3 +105,14 @@ tr:nth-child(even) {
 .loginPanel {
   background-color: green;
 }
+
+.adminmenu {
+  text-align: left;
+}
+
+#loginFixed {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+}
+

@@ -200,5 +200,9 @@ function invalidOrder() {
   alert("Please properly fill out your name (20 characters max) and phone number (XXX-XXX-XXXX). Thank you.")
 }
 
+function refresh() {
+  console.log("Refresh...");
+}
+
 console.log("a3-jhyuen-kiosk")
 console.log("Welcome to Fantastic Fries!")
