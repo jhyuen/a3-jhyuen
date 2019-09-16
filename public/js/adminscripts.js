@@ -18,5 +18,7 @@ function invalidLogin() {
   alert("Invalid Username/Password. Please try again.");
 }
 
+// add something that refreshes queue every few seconds
+
 console.log("a3-jhyuen-admin")
 console.log("Welcome to Fantastic Fries!")
