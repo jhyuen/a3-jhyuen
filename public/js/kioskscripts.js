@@ -115,8 +115,8 @@ refreshTable();
 
 // submit button
 window.onload = function() {
-    const button = document.querySelector( '#submitBtn' )
-    button.onclick = submit
+  const button = document.querySelector( '#submitBtn' )
+  button.onclick = submit
 }
 
 // resets form fields
