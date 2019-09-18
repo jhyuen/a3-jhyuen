@@ -6,8 +6,14 @@ var potato = document.getElementById('potato')
 var seasoning = document.getElementById('seasoning')
 var size = document.getElementById('size')
 
-// keeps track of latest order number
-//var orderNum = 0;
+// refresh table on load
+refreshTable();
+
+// attach submit button object/function to submit button
+window.onload = function() {
+  const button = document.querySelector( '#submitBtn' )
+  button.onclick = submit
+}
 
 // add order to server queue table
 const submit = function( e ) {
@@ -109,15 +115,6 @@ function createTable(data) {
     }
 }
 
-// refresh table on load
-refreshTable();
-
-// submit button
-window.onload = function() {
-  const button = document.querySelector( '#submitBtn' )
-  button.onclick = submit
-}
-
 // resets form fields
 function resetForm() {
   yourname.value = 'John Doe';
@@ -201,6 +198,7 @@ function invalidOrder() {
 
 function refresh() {
   console.log("Refresh...");
+  refreshTable();
 }
 
 console.log("a3-jhyuen-kiosk")
