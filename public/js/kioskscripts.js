@@ -7,7 +7,7 @@ var seasoning = document.getElementById('seasoning')
 var size = document.getElementById('size')
 
 // keeps track of latest order number
-var orderNum = 0;
+//var orderNum = 0;
 
 // add order to server queue table
 const submit = function( e ) {
@@ -28,9 +28,9 @@ const submit = function( e ) {
     }
 
     // increment order number for a new order
-    orderNum++;
+    //orderNum++;
 
-    const json = { yourname: yourname.value, phone: phone.value, potato: potato.value, seasoning: seasoning.value, size: size.value, orderNum: orderNum},
+    const json = { yourname: yourname.value, phone: phone.value, potato: potato.value, seasoning: seasoning.value, size: size.value},
           body = JSON.stringify( json )
 
     // order sent to server
