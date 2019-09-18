@@ -3,10 +3,35 @@
 var username = document.getElementById('username')
 var password = document.getElementById('password')
 
+// attach submit button object/function to submit button
+window.onload = function() {
+  const button = document.querySelector( '#login' )
+  button.onclick = login
+}
+
 // login
-function login() {
-  console.log("Login...")
-  window.location='http://localhost:3000/admin.html';
+const login = function(e) {
+
+  // prevent default form action from being carried out
+  e.preventDefault()
+
+  console.log("Attempting to Login...")
+
+  const username = document.querySelector( '#username' ),
+        password = document.querySelector( '#password' )
+
+  fetch( '/login', {
+    method:'POST',
+    body: JSON.stringify({ username:username.value, password:password.value}),
+    headers: { 'Content-Type': 'application/json' },
+    credentials: 'include'
+  })
+  .then (function (response) {
+    window.location.href = response.url 
+  });
+  //.then( console.log("login attempt..") )
+  
+  //window.location='http://localhost:3000/admin.html';
 }
 
 // back to kiosk 

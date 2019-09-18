@@ -17,12 +17,14 @@ app.get('/', function(request, response) {
   response.sendFile( __dirname + '/views/index.html' )
 })
 
+app.use( session({ secret:'cats cats cats', resave:false, saveUninitialized:false }) )
+app.use( passport.initialize() )
+app.use( passport.session() )
 
-
-
-
-
-
+app.post('/test', function( req, res ) {
+  console.log( 'authenticate with cookie?', req.user )
+  res.json({ status:'success' })
+})
 
 
 
@@ -34,10 +36,10 @@ app.get('/', function(request, response) {
 const myLocalStrategy = function( username, password, done ) {
   // find the first item in our users array where the username
   // matches what was sent by the client. nicer to read/write than a for loop!
-  const user = users.find( __user => __user.username === username )
+  const user = db.get('users').find({username: username}).value()
   
   // if user is undefined, then there was no match for the submitted username
-  if( user === undefined ) {
+  if( user === undefined ) { 
     /* arguments to done():
      - an error object (usually returned from database requests )
      - authentication status
@@ -60,12 +62,26 @@ passport.initialize()
 
 app.post( 
   '/login',
-  passport.authenticate( 'local' ),
+  passport.authenticate( 'local', { successRedirect: '/admin.html', failureRedirect: '/login.html' }),
   function( req, res ) {
     console.log( 'user:', req.user )
     res.json({ status:true })
   }
 )
+
+passport.serializeUser( ( user, done ) => done( null, user.username ) )
+
+passport.deserializeUser( ( username, done ) => {
+  const user = db.find( u => u.username === username )
+  console.log( 'deserializing:', username )
+  
+  if( user !== undefined ) {
+    done( null, user )
+  }else{
+    done( null, false, { message:'user not found; session not restored' })
+  }
+})
+
 
 
 
