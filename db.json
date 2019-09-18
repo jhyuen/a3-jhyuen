@@ -1,36 +1,12 @@
 {
   "orders": [
     {
-      "yourname": "Joe",
-      "phone": "122-343-2334",
-      "potato": "sweet",
-      "seasoning": "salt",
+      "yourname": "John Doe",
+      "phone": "123-456-7890",
+      "potato": "yellow",
+      "seasoning": "none",
       "size": "small",
-      "ordernum": 1234
-    },
-    {
-      "yourname": "Joe",
-      "phone": "122-343-2334",
-      "potato": "sweet",
-      "seasoning": "salt",
-      "size": "small",
-      "ordernum": 1234
-    },
-    {
-      "yourname": "Joe",
-      "phone": "122-343-2334",
-      "potato": "sweet",
-      "seasoning": "salt",
-      "size": "small",
-      "ordernum": 1234
-    },
-    {
-      "yourname": "Joe",
-      "phone": "122-343-2334",
-      "potato": "sweet",
-      "seasoning": "salt",
-      "size": "small",
-      "ordernum": 1234
+      "ordernum": 1
     },
     {
       "yourname": "John Doe",
@@ -38,7 +14,7 @@
       "potato": "yellow",
       "seasoning": "none",
       "size": "small",
-      "ordernum": 4
+      "ordernum": 2
     },
     {
       "yourname": "John Doe",
@@ -46,138 +22,14 @@
       "potato": "yellow",
       "seasoning": "none",
       "size": "small",
-      "ordernum": 5
-    },
-    {
-      "yourname": "John Doe",
-      "phone": "123-456-7890",
-      "potato": "yellow",
-      "seasoning": "none",
-      "size": "small",
-      "ordernum": 6
-    },
-    {
-      "yourname": "John Doe",
-      "phone": "123-456-7890",
-      "potato": "yellow",
-      "seasoning": "none",
-      "size": "small",
-      "ordernum": 7
-    },
-    {
-      "yourname": "John Doe",
-      "phone": "123-456-7890",
-      "potato": "yellow",
-      "seasoning": "none",
-      "size": "small",
-      "ordernum": 8
-    },
-    {
-      "yourname": "John Doe",
-      "phone": "123-456-7890",
-      "potato": "yellow",
-      "seasoning": "none",
-      "size": "small",
-      "ordernum": 9
-    },
-    {
-      "yourname": "John Doe",
-      "phone": "123-456-7890",
-      "potato": "yellow",
-      "seasoning": "none",
-      "size": "small",
-      "ordernum": 10
-    },
-    {
-      "yourname": "John Doe",
-      "phone": "123-456-7890",
-      "potato": "yellow",
-      "seasoning": "none",
-      "size": "small",
-      "ordernum": 11
-    },
-    {
-      "yourname": "John Doe",
-      "phone": "123-456-7890",
-      "potato": "yellow",
-      "seasoning": "none",
-      "size": "small",
-      "ordernum": 12
-    },
-    {
-      "yourname": "John Doe",
-      "phone": "123-456-7890",
-      "potato": "yellow",
-      "seasoning": "none",
-      "size": "small",
-      "ordernum": 13
-    },
-    {
-      "yourname": "John Doe",
-      "phone": "123-456-7890",
-      "potato": "yellow",
-      "seasoning": "none",
-      "size": "small",
-      "ordernum": 14
-    },
-    {
-      "yourname": "John Doe",
-      "phone": "123-456-7890",
-      "potato": "yellow",
-      "seasoning": "none",
-      "size": "small",
-      "ordernum": 15
-    },
-    {
-      "yourname": "John Doe",
-      "phone": "123-456-7890",
-      "potato": "yellow",
-      "seasoning": "none",
-      "size": "small",
-      "ordernum": 16
-    },
-    {
-      "yourname": "John Doe",
-      "phone": "123-456-7890",
-      "potato": "yellow",
-      "seasoning": "none",
-      "size": "small",
-      "ordernum": 17
-    },
-    {
-      "yourname": "John Doe",
-      "phone": "123-456-7890",
-      "potato": "yellow",
-      "seasoning": "none",
-      "size": "medium",
-      "ordernum": 18
-    },
-    {
-      "yourname": "John Doe",
-      "phone": "123-456-7890",
-      "potato": "yellow",
-      "seasoning": "snp",
-      "size": "small",
-      "ordernum": 19
+      "ordernum": 3
     }
   ],
   "users": [
     {
       "username": "admin",
       "password": "fantastic"
-    },
-    {
-      "username": "admin",
-      "password": "fantastic"
-    },
-    {
-      "username": "admin",
-      "password": "fantastic"
-    },
-    {
-      "username": "admin",
-      "password": "fantastic"
     }
   ],
-  "ordercount": 20
+  "ordercount": 4
 }

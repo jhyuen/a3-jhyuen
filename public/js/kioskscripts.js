@@ -74,7 +74,6 @@ function refreshTable() {
 function createTable(data) {
 
     var table = document.getElementById('tableData');
-    var orders = []
     var cost = 0;
 
     // clear old table entries except for the first
@@ -88,7 +87,7 @@ function createTable(data) {
         var potato = (data[x].potato)
         var seasoning = (data[x].seasoning)
         var size = (data[x].size)
-        var orderNum = (data[x].orderNum)
+        var ordernum = (data[x].ordernum)
 
         var cost = calculateCost(potato,seasoning, size);
 
@@ -105,7 +104,7 @@ function createTable(data) {
         cell0.innerHTML = yourname;
         cell1.innerHTML = food;
         cell2.innerHTML = "$" + cost;
-        cell3.innerHTML = orderNum;
+        cell3.innerHTML = ordernum;
         //cell4.innerHTML = '<button onclick="removeOrder(' + x + ')">Remove</button>';
     }
 }

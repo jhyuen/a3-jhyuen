@@ -29,7 +29,6 @@ app.post( '/submit', function( request, response ) {
   })
 
   request.on( 'end', function() {
-    console.log( JSON.parse( dataString ) )
 
     var order = JSON.parse( dataString )
     var yourname = (order.yourname)
@@ -71,6 +70,7 @@ const db = low( adapter )
 db.defaults({ orders: [], users: [], ordercount: 0 })
   .write()
 
+/*
 // add an order
 db.get('orders')
   .push({ yourname: 'Joe', phone: '122-343-2334', potato: 'sweet', seasoning: 'salt', size: 'small', ordernum: 1234})
@@ -84,6 +84,7 @@ db.get('users')
 // increment ordercount
 db.update('ordercount', n => n + 1)
   .write()
+*/
 
 /*
 // filter users by age
