@@ -29,7 +29,7 @@ refreshTable();
 // logout
 function logout() {
   console.log("Logout...")
-  window.location='http://localhost:3000/login.html';
+  window.location='/login.html';
 }
 
 // add order to server queue table
