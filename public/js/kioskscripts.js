@@ -101,13 +101,11 @@ function createTable(data) {
         var cell1 = row.insertCell(1);
         var cell2 = row.insertCell(2);
         var cell3 = row.insertCell(3);
-        //var cell4 = row.insertCell(4);
 
         cell0.innerHTML = yourname;
         cell1.innerHTML = food;
         cell2.innerHTML = "$" + cost;
         cell3.innerHTML = ordernum;
-        //cell4.innerHTML = '<button onclick="removeOrder(' + x + ')">Remove</button>';
     }
 }
 

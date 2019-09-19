@@ -29,9 +29,6 @@ const login = function(e) {
   .then (function (response) {
     window.location.href = response.url 
   });
-  //.then( console.log("login attempt..") )
-  
-  //window.location='http://localhost:3000/admin.html';
 }
 
 // back to kiosk 

@@ -79,16 +79,6 @@ tr:nth-child(even) {
     margin-right: 150px;  
 }
 
-.admincolumns {
-  column-count: 2;
-  column-gap: 80px;
-  column-rule-style: solid;
-  column-rule-width: 3px;
-  column-rule-color: black;
-  column-fill: balance;
-  margin-top: 30px;
-}
-
 .space {
     break-inside: avoid-column;
 }
@@ -110,7 +100,6 @@ tr:nth-child(even) {
 .adminqueue {
   text-align: left;
   margin-top: 30px;
-  margin-bottom: 50px;
 }
 
 
@@ -141,6 +130,8 @@ tr:nth-child(even) {
 
 .adminmenu {
   text-align: left;
+  margin-top: 40px;
+  margin-bottom: 50px;
 }
 
 .subtitle {

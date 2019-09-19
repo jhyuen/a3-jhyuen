@@ -65,7 +65,6 @@ app.post(
   '/login',
   passport.authenticate( 'local', { successRedirect: '/admin.html', failureRedirect: '/login.html'}),
   function( req, res ) {
-    console.log( 'user:', req.user )
     res.json({ status:true })
   }
 )

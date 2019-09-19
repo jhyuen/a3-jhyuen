@@ -32,10 +32,6 @@ function logout() {
   window.location='http://localhost:3000/login.html';
 }
 
-// add something that refreshes queue every few seconds
-// !!!
-
-
 // add order to server queue table
 const addOrder = function( e ) {
 
@@ -282,6 +278,11 @@ function removeOrder(x) {
   })
 
   return false;
+}
+
+function refresh() {
+  console.log("Refresh...");
+  refreshTable();
 }
 
 function editOrder(x) {
