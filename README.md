@@ -2,10 +2,12 @@
 
 [http://a3-joseph-yuen.glitch.me](http://a3-joseph-yuen.glitch.me)
 
-Admin Account Details: 
+### Admin Account Details 
 Username: admin
+
 Password: fantastic
 
+### Description
 The goal of the application is to provide an admin experience for the already existing Fantastic Fries kiosk site. By creating a login portal for admins and add/edit/delete tools, admins are able to manage orders from the kitchen, while customers can order in the front of the restaurant. 
 
 I initially had issues figuring out the role of Express. Once I understood that it was meant to compeletely replace my exisiting server, I realized how simple express is and how powerful it can be with the proper middleware. While developing, I also ran into issues with authentication. For the most part, I was confused with how it worked and how to make passport fit to my needs. Since my needs were relatively simple, I think I was able to make it work as it directs on success to the right page.
