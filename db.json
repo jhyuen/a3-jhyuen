@@ -95,80 +95,12 @@
       "seasoning": "pepper",
       "size": "small",
       "ordernum": 69
-    },
-    {
-      "yourname": "Joe Smith",
-      "phone": "123-456-7890",
-      "potato": "yellow",
-      "seasoning": "pepper",
-      "size": "small",
-      "ordernum": 70
-    },
-    {
-      "yourname": "John Doe",
-      "phone": "123-456-7890",
-      "potato": "yellow",
-      "seasoning": "none",
-      "size": "small",
-      "ordernum": 71
     }
   ],
   "users": [
     {
       "username": "admin",
       "password": "fantastic"
-    },
-    {
-      "username": "test",
-      "password": "grader"
-    },
-    {
-      "username": "test",
-      "password": "grader"
-    },
-    {
-      "username": "test",
-      "password": "grader"
-    },
-    {
-      "username": "test",
-      "password": "grader"
-    },
-    {
-      "username": "test",
-      "password": "grader"
-    },
-    {
-      "username": "test",
-      "password": "grader"
-    },
-    {
-      "username": "test",
-      "password": "grader"
-    },
-    {
-      "username": "test",
-      "password": "grader"
-    },
-    {
-      "username": "test",
-      "password": "grader"
-    },
-    {
-      "username": "test",
-      "password": "grader"
-    },
-    {
-      "username": "test",
-      "password": "grader"
-    },
-    {
-      "username": "test",
-      "password": "grader"
-    },
-    {
-      "username": "test",
-      "password": "grader"
     },
     {
       "username": "test",

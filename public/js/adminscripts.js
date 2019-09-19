@@ -32,13 +32,8 @@ function logout() {
   window.location='http://localhost:3000/login.html';
 }
 
-// reset queue - clears old orders
-function reset() {
-  console.log("Reset Queue...")
-}
-
 // add something that refreshes queue every few seconds
-
+// !!!
 
 
 // add order to server queue table
@@ -84,11 +79,41 @@ const updateOrder = function( e ) {
 
   // prevent default form action from being carried out
   e.preventDefault()
-  console.log('updating...')
+  console.log('Updating Order ' + currentordernum)
 
+  const yourname = document.querySelector( '#name' ),
+        phone = document.querySelector( '#phone' ),
+        potato = document.querySelector( '#potato' ),
+        seasoning = document.querySelector( '#seasoning' ),
+        size = document.querySelector( '#size' )
+        currentordernum = currentordernum
 
+ var phonepattern = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
 
-  return false
+ if ((yourname.value.length > 20 || !phone.value.match(phonepattern))) {
+    invalidOrder();
+    return;
+  }
+
+  const json = { yourname: yourname.value, phone: phone.value, potato: potato.value, seasoning: seasoning.value, size: size.value, currentordernum: currentordernum},
+  body = JSON.stringify( json )
+
+  // order sent to server
+  fetch( '/update', {
+    method:'POST',
+    body
+  })
+
+  .then( function( response ) {
+    console.log( response )
+    
+    // load data into queue table
+    refreshTable();
+  })
+
+  resetForm()
+
+  return false;
 }
 
 function refreshTable() {

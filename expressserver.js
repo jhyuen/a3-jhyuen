@@ -76,6 +76,36 @@ passport.deserializeUser( ( username, done ) => {
 // GET orders
 app.get('/orders', (req, res) => res.send(db.get('orders').values()))
 
+// POST update
+app.post( '/update', function( request, response ) {
+  dataString = ''
+  
+  request.on( 'data', function( data ) {
+    dataString += data
+  })
+
+  request.on( 'end', function() {
+
+    var updatedata = JSON.parse(dataString)
+    var yourname = (updatedata.yourname)
+    var phone = (updatedata.phone)
+    var potato = (updatedata.potato)
+    var seasoning = (updatedata.seasoning)
+    var size = (updatedata.size)
+    var currentordernum = (updatedata.currentordernum)
+
+    //obj = { yourname: yourname, phone: phone, potato: potato, seasoning: seasoning, size: size, ordernum: currentordernum}
+
+    db.get('orders')
+      .find({ordernum: currentordernum})
+      .assign({ yourname: yourname, phone: phone, potato: potato, seasoning: seasoning, size: size, ordernum: currentordernum}) 
+      .value()
+
+    response.writeHead( 200, "OK", {'Content-Type': 'application/json' })
+    response.end()
+  })
+})
+
 // POST remove
 app.post( '/remove', function( request, response ) {
   dataString = ''
