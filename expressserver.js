@@ -3,18 +3,33 @@ const express   = require( 'express' ),
       session   = require( 'express-session' ),
       passport  = require( 'passport' ),
       Local     = require( 'passport-local' ).Strategy,
-      bodyParser= require( 'body-parser' )
+      bodyParser= require( 'body-parser' ),
+      helmet = require('helmet')
+      favicon = require('serve-favicon')
+      path = require('path')
+      optimus = require('connect-image-optimus')
 
 // automatically deliver all files in the public folder
 // with the correct headers / MIME type.
 app.use( express.static( 'public' ) )
 
-// get json when appropriate
+// get json when appropriate - middleware
 app.use( bodyParser.json() )
+
+// connect-image-optimus - middleware
+var staticPath = __dirname + '/static/'
+app.use(optimus(staticPath))
+
+// favicon - middleware
+app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
+
+// helmet - middleware
+app.use(helmet())
 
 // domain views index.html
 app.get('/', function(request, response) {
   response.sendFile( __dirname + '/views/index.html' )
+  response.send('hello, world!')
 })
 
 app.use( session({ secret:'cats cats cats', resave:false, saveUninitialized:false }) )
@@ -42,12 +57,13 @@ const myLocalStrategy = function( username, password, done ) {
   }
 }
 
+// passport - middleware
 passport.use( new Local( myLocalStrategy ) )
 passport.initialize()
 
 app.post( 
   '/login',
-  passport.authenticate( 'local', { successRedirect: '/admin.html', failureRedirect: '/login.html', failureFlash: 'Invalid username or password.'}),
+  passport.authenticate( 'local', { successRedirect: '/admin.html', failureRedirect: '/login.html'}),
   function( req, res ) {
     console.log( 'user:', req.user )
     res.json({ status:true })
