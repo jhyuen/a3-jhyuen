@@ -34,7 +34,7 @@ const login = function(e) {
 // back to kiosk 
 function kiosk() {
   console.log("Kiosk...")
-  window.location='http://localhost:3000';
+  window.location='/';
 }
 
 // resets login fields
