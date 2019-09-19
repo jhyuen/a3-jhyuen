@@ -1,4 +1,3 @@
-
 // order form fields
 var yourname = document.getElementById('name')
 var phone = document.getElementById('phone')
@@ -32,9 +31,6 @@ const submit = function( e ) {
       invalidOrder();
       return;
     }
-
-    // increment order number for a new order
-    //orderNum++;
 
     const json = { yourname: yourname.value, phone: phone.value, potato: potato.value, seasoning: seasoning.value, size: size.value},
           body = JSON.stringify( json )

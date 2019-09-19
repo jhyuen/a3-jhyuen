@@ -27,32 +27,17 @@ app.post('/test', function( req, res ) {
 })
 
 
-
-
 // AUTHENTICATION
-// all authentication requests in passwords assume that your client
-// is submitting a field named "username" and field named "password".
-// these are both passed as arugments to the authentication strategy.
 const myLocalStrategy = function( username, password, done ) {
-  // find the first item in our users array where the username
-  // matches what was sent by the client. nicer to read/write than a for loop!
+
   const user = db.get('users').find({username: username}).value()
   
   // if user is undefined, then there was no match for the submitted username
   if( user === undefined ) { 
-    /* arguments to done():
-     - an error object (usually returned from database requests )
-     - authentication status
-     - a message / other data to send to client
-    */
     return done( null, false, { message:'user not found' })
   }else if( user.password === password ) {
-    // we found the user and the password matches!
-    // go ahead and send the userdata... this will appear as request.user
-    // in all express middleware functions.
     return done( null, { username, password })
   }else{
-    // we found the user but the password didn't match...
     return done( null, false, { message: 'incorrect password' })
   }
 }
@@ -62,14 +47,17 @@ passport.initialize()
 
 app.post( 
   '/login',
-  passport.authenticate( 'local', { successRedirect: '/admin.html', failureRedirect: '/login.html' }),
+  passport.authenticate( 'local', { successRedirect: '/admin.html', failureRedirect: '/login.html', failureFlash: 'Invalid username or password.'}),
   function( req, res ) {
     console.log( 'user:', req.user )
     res.json({ status:true })
   }
 )
 
-passport.serializeUser( ( user, done ) => done( null, user.username ) )
+passport.serializeUser( ( user, done ) => {
+  console.log( 'serializing:', user.username)
+  done( null, user.username ) 
+})
 
 passport.deserializeUser( ( username, done ) => {
   const user = db.find( u => u.username === username )
@@ -84,24 +72,38 @@ passport.deserializeUser( ( username, done ) => {
 
 
 
-
-
-
-
-
-
-
-
 // ORDERS
 // GET orders
 app.get('/orders', (req, res) => res.send(db.get('orders').values()))
+
+// POST remove
+app.post( '/remove', function( request, response ) {
+  dataString = ''
+  
+  request.on( 'data', function( data ) {
+    dataString += data
+  })
+
+  request.on( 'end', function() {
+
+    var removedata = JSON.parse(dataString)
+    var index = (removedata.number)
+
+    db.get('orders')
+      .pullAt(index)
+      .write()
+
+    response.writeHead( 200, "OK", {'Content-Type': 'application/json' })
+    response.end()
+  })
+})
 
 // POST submit
 app.post( '/submit', function( request, response ) {
   dataString = ''
 
   request.on( 'data', function( data ) {
-      dataString += data
+    dataString += data
   })
 
   request.on( 'end', function() {
@@ -120,7 +122,7 @@ app.post( '/submit', function( request, response ) {
 
     // add new order to orders part of database
     db.get('orders')
-      .push(obj)
+      .push(obj)  
       .write()
 
     // increment ordercount
@@ -133,15 +135,6 @@ app.post( '/submit', function( request, response ) {
 })
 
 app.listen( process.env.PORT || 3000 )
-
-
-
-
-
-
-
-
-
 
 
 
@@ -161,13 +154,17 @@ db.defaults({ orders: [], users: [], ordercount: 0 })
 // add an order
 db.get('orders')
   .push({ yourname: 'Joe', phone: '122-343-2334', potato: 'sweet', seasoning: 'salt', size: 'small', ordernum: 1234})
-  .write()
+  .write() 
+*/
 
+/*
 // add a user
 db.get('users')
-  .push({ username:'admin', password:'fantastic' })
+  .push({ username:'test', password:'grader' })
   .write()
+*/
   
+/*
 // increment ordercount
 db.update('ordercount', n => n + 1)
   .write()
