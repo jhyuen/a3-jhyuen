@@ -14,23 +14,25 @@
   <body>
     <div class=".align-content-md-center">
       <div class="container">
-        <h1>Login</h1>
-        <button id="kiosk" type="button" class="btn btn-primary" onclick="kiosk()">Kiosk</button>
+        <div class="title">
+          <h1>Login</h1>
+        </div>
+        <button id="kioskFixed" type="button" class="btn btn-primary" onclick="kiosk()">Kiosk</button>
           <div class="container">
             <div class="loginPanel">
-              <h2>Username</h2>
+              <h3>Username</h3>
               <form action="">
-                  <input type='text' id='username' value="username">
-                </form>
-              <h2>Password</h2>
-              <form action="">
-                <input type='text' id='password' value="password">
+                <input type='text' id='username'>
               </form>
+              <div class="password">
+                <h3>Password</h3>
+                <form action="">
+                  <input type='text' id='password'>
+                </form>
+              </div>
+              <button id="login" type="button" class="btn btn-primary">Login</button>
           </div>
           </div>
-      </div>
-      <div class="container">
-          <button id="login" type="button" class="btn btn-primary">Login</button>
       </div>
     </div>
       

@@ -3,15 +3,11 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     background-size: 100%;
     background-position: fixed;
-    margin-left: 200px;
-    margin-right: 200px;
-    margin-bottom: 100px;
 }
 
 h1 {
     text-align: center;
     color: black;
-    margin-top: 80px;
     font-style: normal;
     font-weight: bold;
     font-size: 40px;
@@ -22,22 +18,29 @@ h2 {
     color: black;
     font-style: normal;
     font-weight: bold;
+    text-decoration: underline;
 }
 
 h3 {
     text-align: center;
-    color: black;
+    color:black;
     font-style: normal;
     font-weight: bold;
 }
 
+form {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
 p {
-  font-weight: normal ;
+  font-weight: normal;
 }
 
 table {
   border-collapse: collapse;
   width: 100%;
+  margin-top:15px;
 }
 
 td, th {
@@ -48,7 +51,7 @@ td, th {
 
 tbody {
   display: block;
-  height: 372px;   
+  height: 400px;   
   width: 100%;   
   overflow-y: auto;    /* Trigger vertical scroll    */
   overflow-x: hidden;  /* Hide the horizontal scroll */
@@ -73,7 +76,17 @@ tr:nth-child(even) {
     column-fill: balance;
     column-width: 100px;
     margin-top: 30px;
-    margin-right: 150px;
+    margin-right: 150px;  
+}
+
+.admincolumns {
+  column-count: 2;
+  column-gap: 80px;
+  column-rule-style: solid;
+  column-rule-width: 3px;
+  column-rule-color: black;
+  column-fill: balance;
+  margin-top: 30px;
 }
 
 .space {
@@ -94,11 +107,18 @@ tr:nth-child(even) {
   text-align: left;
 }
 
-.instructions {
-  margin-left: 250px;
-  margin-right: 250px;
-  text-align: center;
+.adminqueue {
+  text-align: left;
   margin-top: 30px;
+  margin-bottom: 50px;
+}
+
+
+.instructions {
+  text-align: center;
+  margin-top: 20px;
+  padding-left: 100px;
+  padding-right: 100px;
   margin-bottom: 30px;
 }
 
@@ -107,20 +127,52 @@ tr:nth-child(even) {
 }
 
 .title {
-  margin-top: 60px;
+  margin-top: 70px;
+  margin-left: 100px;
+  margin-right: 100px;
 }
 
 .loginPanel {
-  background-color: green;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  margin-top: 30px;
+  text-align: center;
 }
 
 .adminmenu {
   text-align: left;
 }
 
-#loginFixed {
-  position: fixed;
-  top: 20px;
-  right: 20px;
+.subtitle {
+  margin-top: 10px;
 }
 
+.password {
+  margin-top: 20px;
+}
+
+#loginFixed {
+  position: fixed;
+  top: 30px;
+  right: 30px;
+}
+
+#login {
+  margin-top: 15px;
+}
+
+#kioskFixed {
+  position: fixed;
+  top: 30px;
+  right: 30px;
+}
+
+#logoutFixed {
+  position: fixed;
+  top: 30px;
+  right: 30px;
+}
+
+#refresh {
+  margin-top: 15px;
+}

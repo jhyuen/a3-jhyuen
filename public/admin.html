@@ -13,12 +13,32 @@
   </head>
   <body>
     <div class="container">
-      <h1>Admin Panel</h1>
-      <button id="logout" type="button" class="btn btn-primary" onclick="logout()">Logout</button>
+      <div class="title">
+        <h1>Admin Panel</h1>
+      </div>
+      <button id="logoutFixed" type="button" class="btn btn-primary" onclick="logout()">Logout</button>
     </div>
 
     <div class="container">
-    
+      
+      <!--Queue-->
+      <div class="container">
+          <div class="adminqueue">
+              <h2>Queue</h2>
+              <table id='tableData'>
+                <tr>
+                  <th>Order #</th>
+                  <th>Name</th>
+                  <th>Fries</th>
+                  <th>Cost</th>
+                  <th>Phone #</th>
+                  <th>Edit</th>
+                  <th>Delete</th>
+                </tr>
+              </table>
+          </div>
+        </div>
+
       <!--Add/Edit-->
       <div class="container adminmenu">
         <h2>Add/Edit</h2>
@@ -68,23 +88,7 @@
             <button id="updateOrder" type="button" class="btn btn-primary">Update Order</button>
       </div>
 
-      <!--Queue-->
-      <div class="container">
-        <div class="queue">
-            <h2>Queue</h2>
-            <table id='tableData'>
-              <tr>
-                <th>Order #</th>
-                <th>Name</th>
-                <th>Fries</th>
-                <th>Cost</th>
-                <th>Phone #</th>
-                <th>Edit</th>
-                <th>Delete</th>
-              </tr>
-            </table>
-        </div>
-      </div>
+      
 
     </div>
 
